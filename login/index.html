@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <title>Inicio de sesión</title>
+</head>
+<body>
+  <main class="main">
+    <article class="card">
+      <header class="card__header">
+        <figure class="card__logo">
+          <img class="card__avatar" src="assets/montana.png" alt="logo">
+        </figure>
+        <h2 class="card__title">Inicio de sesión</h2>
+      </header>
+      <div class="card__body">
+        <form id="login-form" class="login-form">
+          <input type="text" autocomplete="email" id="email" placeholder="Email" class="login-form__input">
+          <div class="form-field">
+            <input type="password" autocomplete="current-password" id="password" placeholder="Contraseña" class="login-form__input">
+            <img src="assets/eye.png" class="form-field__icon" id="eye-button">
+          </div>
+          <button type="submit" id="submit-button" class="submit-button">Iniciar sesión</button>
+        </form>
+      </div>
+      <div class="card__footer">
+        <span class="alert" id="form-alert">Mensaje de alerta</span>
+      </div>
+    </article>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>

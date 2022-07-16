@@ -1,0 +1,171 @@
+:root { 
+  font-size: 14px;
+  font-family: sans-serif;
+  --card-bg-color: rgba(166, 51, 233, 0.25);
+  --card-bg-gradient: linear-gradient(to bottom, #796ff6, #a928e5 60%);
+  --main-bg-filter: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  --card-font-color: #fff;
+}
+
+body { 
+  background-image: var(--main-bg-filter), url('../assets/background-portrait.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  min-height: 100vh;
+  display: grid;
+  position: relative;
+  place-items: center;
+  margin: 0;
+  @media screen and(min-width: 768px) {
+    background-image: var(--main-bg-filter), url('../assets/background-landscape.jpg');
+  }
+}
+
+.main { 
+  padding: 1rem;
+}
+
+.card {
+  background-image: var(--card-bg-gradient);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem 2rem;
+  min-height: 350px;
+  width: 250px;
+  color: var(--card-font-color);
+  &__title { 
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__logo { 
+    background-color: #f2f2f2;
+    border-radius:50%;
+    height: 72px;
+    margin: 0 auto;
+    width: 72px;
+    padding: .5rem;
+    display: grid;
+    place-items: center;    
+  }
+  &__avatar { 
+    max-width: 40px;  
+    filter: opacity(.8);
+  }
+  &__footer { 
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  @media screen and (min-width: 768px) {
+    width: 320px;
+    
+  }
+}
+
+.login-form { 
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  gap: 2rem;
+  &__input {
+    &::placeholder { 
+      color: #edededb8;
+    }
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    &:focus {
+      border-color: #fcc450;
+    }
+  }
+  .submit-button { 
+    width: 200px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2f2f2f;
+    height: 40px;
+    background-color: #f1f1f1;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 50ms;
+    transform-origin: center;
+    &:hover { 
+      background-color: #ffeecc;
+    }
+    &:active {
+      background-color: #fcc450;
+    }
+    &--disabled { 
+      cursor: wait;
+      position: relative;
+      display: grid;
+      place-items: center;
+      &::before {
+        content: "";
+        position: absolute;
+      }
+      &:before {
+        border: 5px solid rgba(0,0,0,.1);
+        height: 25px;
+        width: 25px;
+        margin: 5em auto;
+        border-radius: 50%;
+        border-left-color: #c05a5a;
+        animation: spin 1s ease infinite;
+      }
+    
+      background-color: #f2f2f2;
+      &:hover {
+        background-color: #f2f2f2;
+      }
+      &:active {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}
+
+.form-field {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  &__icon { 
+    cursor: pointer;
+    max-width: 20px;
+    &--active {
+      content: url('../assets/eye-off.png')
+    }
+  }
+}
+
+.alert { 
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  letter-spacing: .5px;
+  transform: scale(0);
+  transition: background-color 0.2s ease-in;
+  max-width: 250px;
+  text-align: center;
+  &--error {
+    transform: scale(1);
+    background-color: #e8492e;
+  }
+  &--warning { 
+    transform: scale(1);
+    background-color: #d59019;
+  }
+}
+
+@keyframes spin{
+  0%{
+      transform: rotate(0deg); 
+  }
+  100%{
+      transform: rotate(360deg)
+  }
+}

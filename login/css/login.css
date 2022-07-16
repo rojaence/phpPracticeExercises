@@ -1,0 +1,173 @@
+:root {
+  font-size: 14px;
+  font-family: sans-serif;
+  --card-bg-color: rgba(166, 51, 233, 0.25);
+  --card-bg-gradient: linear-gradient(to bottom, #796ff6, #a928e5 60%);
+  --main-bg-filter: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  --card-font-color: #fff;
+}
+
+body {
+  background-image: var(--main-bg-filter), url("../assets/background-portrait.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  min-height: 100vh;
+  display: grid;
+  position: relative;
+  place-items: center;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-image: var(--main-bg-filter), url("../assets/background-landscape.jpg");
+  }
+}
+
+.main {
+  padding: 1rem;
+}
+
+.card {
+  background-image: var(--card-bg-gradient);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem 2rem;
+  min-height: 350px;
+  width: 250px;
+  color: var(--card-font-color);
+}
+.card__title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.card__logo {
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  height: 72px;
+  margin: 0 auto;
+  width: 72px;
+  padding: 0.5rem;
+  display: grid;
+  place-items: center;
+}
+.card__avatar {
+  max-width: 40px;
+  filter: opacity(0.8);
+}
+.card__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 320px;
+  }
+}
+
+.login-form {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+.login-form__input {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+.login-form__input::placeholder {
+  color: rgba(237, 237, 237, 0.7215686275);
+}
+.login-form__input:focus {
+  border-color: #fcc450;
+}
+.login-form .submit-button {
+  width: 200px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2f2f2f;
+  height: 40px;
+  background-color: #f1f1f1;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  border: none;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 50ms;
+  transform-origin: center;
+}
+.login-form .submit-button:hover {
+  background-color: #ffeecc;
+}
+.login-form .submit-button:active {
+  background-color: #fcc450;
+}
+.login-form .submit-button--disabled {
+  cursor: wait;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-color: #f2f2f2;
+}
+.login-form .submit-button--disabled::before {
+  content: "";
+  position: absolute;
+}
+.login-form .submit-button--disabled:before {
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  height: 25px;
+  width: 25px;
+  margin: 5em auto;
+  border-radius: 50%;
+  border-left-color: #c05a5a;
+  animation: spin 1s ease infinite;
+}
+.login-form .submit-button--disabled:hover {
+  background-color: #f2f2f2;
+}
+.login-form .submit-button--disabled:active {
+  background-color: #f2f2f2;
+}
+
+.form-field {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+}
+.form-field__icon {
+  cursor: pointer;
+  max-width: 20px;
+}
+.form-field__icon--active {
+  content: url("../assets/eye-off.png");
+}
+
+.alert {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  letter-spacing: 0.5px;
+  transform: scale(0);
+  transition: background-color 0.2s ease-in;
+  max-width: 250px;
+  text-align: center;
+}
+.alert--error {
+  transform: scale(1);
+  background-color: #e8492e;
+}
+.alert--warning {
+  transform: scale(1);
+  background-color: #d59019;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=login.css.map */
